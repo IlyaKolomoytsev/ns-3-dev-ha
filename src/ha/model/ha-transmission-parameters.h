@@ -13,7 +13,7 @@ namespace ns3
  *
  * Transmission parameters for a hydroacoustic signal.
  */
-class HaTransmissionParameters
+class HaTransmissionParameters : public SimpleRefCount<HaTransmissionParameters>
 {
   public:
     /**
