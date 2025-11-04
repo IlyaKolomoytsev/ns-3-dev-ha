@@ -2,12 +2,14 @@ set(source_files
     model/ha-phy.cc
     model/ha-header.cc
     model/ha-mpdu.cc
+    model/ha-transmission-parameters.cc
 )
 
 set(header_files
     model/ha-phy.h
     model/ha-header.h
     model/ha-mpdu.h
+    model/ha-transmission-parameters.h
     model/ha-units.h
     model/ha-phy-common.h
 )
