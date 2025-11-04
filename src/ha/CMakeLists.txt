@@ -1,0 +1,18 @@
+set(source_files
+    model/ha-phy.cc
+)
+
+set(header_files
+    model/ha-phy.h
+)
+
+build_lib(
+  LIBNAME ha
+  SOURCE_FILES ${source_files}
+  HEADER_FILES ${header_files}
+  LIBRARIES_TO_LINK
+    ${libenergy}
+    ${libspectrum}
+    ${gsl_libraries}
+  GENERATE_EXPORT_HEADER
+)
