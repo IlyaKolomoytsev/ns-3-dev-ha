@@ -3,6 +3,7 @@ set(source_files
     model/ha-header.cc
     model/ha-mpdu.cc
     model/ha-transmission-parameters.cc
+    model/ha-ppdu.cc
 )
 
 set(header_files
@@ -10,6 +11,7 @@ set(header_files
     model/ha-header.h
     model/ha-mpdu.h
     model/ha-transmission-parameters.h
+    model/ha-ppdu.h
     model/ha-units.h
     model/ha-phy-common.h
 )
