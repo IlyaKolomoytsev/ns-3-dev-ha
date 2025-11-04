@@ -6,6 +6,7 @@ HaHeader::HaHeader(HaMacAddress source, HaMacAddress destination)
     : m_source(source),
       m_destination(destination)
 {
+    NS_ASSERT(source != destination);
 }
 
 HaMacAddress
