@@ -7,7 +7,7 @@ namespace ns3
 {
 
 /**
- * @ingroup hydroacoustic
+ * @ingroup ha
  * @brief Alias for the hydroacoustic MAC address type.
  *
  * The hydroacoustic stack uses eight-octet MAC addresses.
@@ -15,7 +15,7 @@ namespace ns3
 using HaMacAddress = Mac8Address;
 
 /**
- * @ingroup hydroacoustic
+ * @ingroup ha
  * @brief Value-type header holding source and destination addresses.
  */
 class HaHeader
