@@ -4,6 +4,7 @@ set(source_files
 
 set(header_files
     model/ha-phy.h
+    model/ha-units.h
 )
 
 build_lib(
