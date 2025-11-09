@@ -69,17 +69,13 @@ except ImportError:
     ipython_view = None
 
 from .base import (
-    PIXELS_PER_METER,
-    InformationWindow,
     Link,
     PyVizObject,
     load_plugins,
     lookup_netdevice_traits,
     plugins,
-    register_plugin,
     transform_distance_canvas_to_simulation,
     transform_distance_simulation_to_canvas,
-    transform_point_canvas_to_simulation,
     transform_point_simulation_to_canvas,
 )
 
@@ -508,10 +504,10 @@ class Node(PyVizObject):
         if isinstance(color, str):
             color = Gdk.color_parse(color)
             color = (
-                ((color.red >> 8) << 24)
-                | ((color.green >> 8) << 16)
-                | ((color.blue >> 8) << 8)
-                | 0xFF
+                    ((color.red >> 8) << 24)
+                    | ((color.green >> 8) << 16)
+                    | ((color.blue >> 8) << 8)
+                    | 0xFF
             )
         self._color = color
         self._update_appearance()
@@ -1376,7 +1372,7 @@ class Visualizer(GObject.GObject):
         ns.PyViz.LineClipping(
             bounds_x1, bounds_y1, bounds_x2, bounds_y2, pos1_x, pos1_y, pos2_x, pos2_y
         )
-        return (pos1_x.value + pos2_x.value) / 2, (pos1_y.value + pos2_y.value) / 2
+        return (pos1_x.currentSnr + pos2_x.currentSnr) / 2, (pos1_y.currentSnr + pos2_y.currentSnr) / 2
 
     def _update_transmissions_view(self):
         transmissions_average = {}
@@ -1533,7 +1529,7 @@ class Visualizer(GObject.GObject):
                 visibility_threshold=0.5,
                 font=("Sans Serif %i" % int(1 + BITRATE_FONT_SIZE * k)),
                 text=(
-                    "%.2f kbit/s" % (float(drop_bytes * 8) / 1e3 / drop_count / self.sample_period,)
+                        "%.2f kbit/s" % (float(drop_bytes * 8) / 1e3 / drop_count / self.sample_period,)
                 ),
                 alignment=Pango.Alignment.CENTER,
                 x=(pos1_x + pos2_x) / 2,
@@ -1908,7 +1904,7 @@ class Visualizer(GObject.GObject):
                 type=Gtk.MessageType.ERROR,
                 buttons=Gtk.ButtonsType.OK,
                 message_format="Unknown extension '%s' (valid extensions are '.eps', '.svg', and '.pdf')"
-                % (extension,),
+                               % (extension,),
             )
             dialog.run()
             dialog.destroy()

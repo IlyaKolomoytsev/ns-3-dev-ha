@@ -112,7 +112,7 @@ class ShowLastPackets(InformationWindow):
                 self.table_model.set(
                     tree_iter,
                     self.COLUMN_TIME,
-                    str(sample.time.GetSeconds()),
+                    str(sample.currentTime.GetSeconds()),
                     self.COLUMN_INTERFACE,
                     interface_name,
                     self.COLUMN_SIZE,

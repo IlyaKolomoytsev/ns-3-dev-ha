@@ -56,7 +56,7 @@ class HaTransmissionParameters : public SimpleRefCount<HaTransmissionParameters>
     HaSignalType m_signalType; //!< Signal type identifier.
     Hz_u m_carrierFrequency;   //!< Carrier frequency [Hz].
     Hz_u m_bandwidth;          //!< Signal bandwidth [Hz].
-    Time duration;             //!< Transmission duration.
+    Time m_duration;           //!< Transmission duration.
 };
 
 } // namespace ns3
